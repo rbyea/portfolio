@@ -9,6 +9,14 @@ $(function () {
 	var width = $(window).width();
 	var height = $(window).height();
 	$('.section.started').css({'height':height});
+	
+	/* Preloader */
+	$(window).on('load', function() {
+		$(".preloader .spinner").fadeOut(function(){
+			$('.preloader').fadeOut();
+			$('body').addClass('ready');
+		});
+	});
 
 	/* Typed subtitle */
 	$('.typed-title').typed({
