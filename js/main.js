@@ -1,12 +1,6 @@
-/**
-*	Hendrix (HTML)
-*	Copyright © Hendrix by beshleyua. All Rights Reserved.
-**/
-
 $(function () {
 	'use strict';
 	
-	var width = $(window).width();
 	var height = $(window).height();
 	$('.section.started').css({'height':height});
 	
@@ -25,9 +19,6 @@ $(function () {
 		typeSpeed: 0, /* Typing speed */
 		loop: true
 	});
-
-	/* Youtube video background */
-	var myPlayer = $("#video-bg").YTPlayer();
 
 	/* Smoothscroll */
 	if($('.section.started').length) {
@@ -73,34 +64,9 @@ $(function () {
 	
 	/* Hide mouse button on scroll */
 	$(window).on('scroll', function() {
-		if ($(this).scrollTop() >= height-10) {
-			$('.mouse-btn').fadeOut();
-		}
-		if ($(this).scrollTop() <= height-10) {
-			$('.mouse-btn').fadeIn();
-		}
 		if ($(this).scrollTop() <= height-10) {
 			$('.top-menu ul li').removeClass("active");
 		}
-	});
-
-	/* Pause/Play video on scroll */
-	if ($('#video-bg').length) {
-		$(window).on('scroll', function() {
-			if ($(this).scrollTop() >= height-10) {
-				$('#video-bg').YTPPause();
-			}
-			if ($(this).scrollTop() <= height-10) {
-				$('#video-bg').YTPPlay();
-			}
-		});
-	}
-	
-	/* On click mouse button, page scroll down */
-	$('.section').on('click', '.mouse-btn', function() {
-		$('body,html').animate({
-			scrollTop: height
-		}, 800);
 	});
 
 	/* Menu filled */
