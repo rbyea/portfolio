@@ -807,3 +807,8 @@ footer .socials a {
 	align-items: center;
 	justify-content: center;
 }
+
+
+.about .bts a:last-child {
+	margin-left: 10px;
+}
